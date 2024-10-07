@@ -1,0 +1,374 @@
+/* Reset básico para remover margens e padding em elementos comuns */
+body,
+h1,
+h2,
+h3,
+p,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo das imagens */
+img {
+    max-width: 100%; /* Tornar todas as imagens responsivas */
+}
+
+/* Definições de fonte e cor de fundo */
+html {
+    font-size: 14px; /* Tamanho base da fonte */
+}
+
+body {
+    background-color: white; /* Cor de fundo */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Família de fontes */
+}
+
+/* Estilo da logo */
+.logo img {
+    max-width: 100%;
+    height: auto;
+    width: 100px; /* Ajuste a largura como necessário */
+    margin-left: -10px; /* Ajuste da posição */
+}
+
+/* Estilo dos links */
+a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+/* Estilo dos títulos e navegação */
+h1,
+nav {
+    text-transform: uppercase; /* Converte texto para letras maiúsculas */
+}
+
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* Família e peso da fonte */
+    font-weight: lighter;
+    font-size: 1.5rem; /* Tamanho do título */
+}
+
+h1 a {
+    padding: 0.3rem 1rem; /* Padding do link dentro do h1 */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #c594d6; /* Cor de fundo */
+    position: sticky; /* Cabeçalho fixo */
+    top: 0;
+    z-index: 9999; /* Para aparecer na frente */
+    padding: 15px;
+    text-align: center;
+}
+
+/* Layout do cabeçalho */
+header .limitador {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* Centraliza na vertical */
+}
+
+/* Limitação da largura do conteúdo */
+.limitador {
+    max-width: 7000px; /* Largura máxima */
+    width: 90vw; /* Largura relativa */
+    margin: auto; /* Centraliza na horizontal */
+}
+
+/* Estilo do menu */
+.menu {
+    list-style: none; /* Remove os estilos de lista padrão */
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    width: 65%; /* Largura do elemento de navegação */
+}
+
+nav h2 {
+    text-align: right; /* Alinha o texto do h2 à direita */
+}
+
+h2 a {
+    color: black; /* Cor do link dentro do h2 */
+}
+
+/* Estilo dos links do menu */
+.menu a {
+    color: black; /* Cor do texto */
+    font-weight: bold; /* Negrito */
+    background-color: #d0a3df; /* Cor de fundo */
+    display: flex;
+    justify-content: center; /* Centraliza conteúdo */
+    height: 50px; /* Altura do menu */
+    align-items: center; /* Alinhamento vertical */
+}
+
+.menu a:hover,
+.menu a:active {
+    background-color: rgb(168, 124, 192); /* Cor de fundo em hover/active */
+}
+
+/* ______________________________________________________________________________________________________________ */
+/* Conteúdo principal - Área destaque */
+
+.destaque {
+    background-image: url(img/Fundo.jpg); /* Imagem de fundo */
+    height: 90vh; /* Altura da seção */
+    color: rgb(104, 66, 106);
+    background-size: cover; /* Cobre toda a tela */
+    background-attachment: fixed; /* Efeito parallax */
+    text-align: center; /* Alinha texto ao centro */
+    display: flex; /* Flexbox para centralizar conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.destaque h2 {
+    font-size: clamp(2rem, 8vw, 7rem); /* Tamanho de fonte responsivo */
+    animation-name: fadeIn; /* Animação de fade-in */
+    animation-duration: 1.5s; /* Duração da animação */
+}
+
+.destaque p {
+    font-size: clamp(1.6rem, 2vw, 4rem); /* Tamanho de fonte responsivo */
+    animation: fadeIn 1.5s 1s backwards; /* Animação com atraso */
+}
+
+/* Animação fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Transparente no início */
+    }
+    to {
+        opacity: 1; /* Opaquidade total no final */
+    }
+}
+
+/* ______________________________________________________________________________________________________________ */
+/* Conteúdo Secundário - Área de texto + imagens */
+
+.front-end {
+    text-align: center; /* Centraliza o texto */
+}
+
+section h2 {
+    text-align: center; /* Centraliza o texto do h2 */
+    padding: 1rem; /* Padding */
+}
+
+section p {
+    padding: 0.5rem 0; /* Padding vertical nos parágrafos */
+    text-align: justify; /* Justifica o texto */
+}
+
+figure {
+    position: relative; /* Permite posicionar texto sobre a imagem */
+    display: inline-block; /* Faz figuras ficarem lado a lado */
+    margin: 60px; /* Margem entre figuras */
+}
+
+/* Estilo das imagens */
+.imagem1,
+.imagem2 {
+    width: 300px;
+    height: 300px;
+}
+
+/* Texto sobreposto na imagem */
+.texto-sobreposto {
+    font-size: 1.2rem; /* Tamanho da fonte */
+    color: #fff; /* Cor do texto */
+    position: absolute; /* Posiciona sobre a imagem */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta o posicionamento */
+    display: none; /* Oculta texto inicialmente */
+    font-family: "Pacifico"; /* Fonte do texto */
+}
+
+/* Efeito hover no texto sobreposto */
+figure:hover .texto-sobreposto {
+    display: block; /* Mostra o texto ao passar o mouse */
+}
+
+/* Estilo da imagem container */
+.imagem-container {
+    display: flex; /* Flexbox para alinhar imagens */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    margin-top: 2rem; /* Margem superior */
+}
+
+/* _________________________________________________________________________________________________ */ 
+/* Hobbies */
+
+/* Ajustes de posição */
+.interesses {
+    flex: 0 0 100%; /* Ocupa toda a largura */
+    background-image: url(img/Fundo.jpg); /* Imagem de fundo */
+    padding: 3.5rem; /* Padding */
+    margin: 1rem; /* Margem */
+    border: 1px solid rgb(92, 1, 95); /* Borda */
+    border-radius: 20px; /* Bordas arredondadas */
+    align-items: center; /* Alinhamento */
+    text-align: center; /* Centraliza texto */
+}
+
+section ul li {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Fonte dos itens da lista */
+    text-align: justify; /* Justifica texto */
+}
+
+/* Estilo do carrossel */
+.carousel {
+    width: 200%; /* Largura do carrossel */
+    max-width: 250px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza */
+    position: relative; /* Para posicionamento relativo */
+    overflow: hidden; /* Oculta overflow */
+    border: 2px solid #000; /* Borda */
+}
+
+.slides {
+    display: flex; /* Flexbox para slides */
+    transition: transform 0.5s ease-in-out; /* Transição suave */
+}
+
+.slides img {
+    width: 100%; /* Largura das imagens */
+    height: auto; /* Altura automática */
+    display: none; /* Oculta imagens */
+}
+
+.slides img.active {
+    display: block; /* Mostra imagem ativa */
+}
+
+/* ________________________________________________________________________________________________________ */
+/* Qualificações */
+
+/* Ajustes de posição */
+.qualificações {
+    flex: 0 0 100%; /* Ocupa toda a largura */
+    background-image: url(img/Fundo.jpg); /* Imagem de fundo */
+    padding: 3.5rem; /* Padding */
+    margin: 1rem; /* Margem */
+    border: 1px solid rgb(92, 1, 95); /* Borda */
+    border-radius: 20px; /* Bordas arredondadas */
+    align-items: center; /* Alinhamento */
+    text-align: center; /* Centraliza texto */
+}
+
+section ul li {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Fonte dos itens da lista */
+    text-align: justify; /* Justifica texto */
+}
+
+/* Estilo do carrossel */
+.carousel {
+    width: 200%; /* Largura do carrossel */
+    max-width: 250px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza */
+    position: relative; /* Para posicionamento relativo */
+    overflow: hidden; /* Oculta overflow */
+    border: 2px solid #000; /* Borda */
+}
+
+.slides {
+    display: flex; /* Flexbox para slides */
+    transition: transform 0.5s ease-in-out; /* Transição suave */
+}
+
+.slides img {
+    width: 100%; /* Largura das imagens */
+    height: auto; /* Altura automática */
+    display: none; /* Oculta imagens */
+}
+
+.slides img.active {
+    display: block; /* Mostra imagem ativa */
+}
+
+/* _________________________________________________________________________________________________________ */
+/* Contato */
+
+/* Ajustes de posição */
+.contato {
+    flex: 0 0 100%; /* Ocupa toda a largura */
+    background-image: url(img/Fundo.jpg); /* Imagem de fundo */
+    padding: 3.5rem; /* Padding */
+    margin: 1rem; /* Margem */
+    border: 1px solid rgb(92, 1, 95); /* Borda */
+    border-radius: 20px; /* Bordas arredondadas */
+    align-items: center; /* Alinhamento */
+    text-align: center; /* Centraliza texto */
+}
+
+/* _________________________________________________________________________________________________________ */
+/* Rodapé  */
+
+/* Estilos do rodapé */
+footer {
+    background-color: #c594d6; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    font-weight: bold; /* Negrito */
+    text-align: center; /* Centraliza texto */
+    height: 14vh; /* Altura do rodapé */
+    display: flex; /* Flexbox para centralizar */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    bottom: 0; /* Fixa na parte inferior */
+    width: 100%; /* Largura total */
+}
+
+footer p {
+    cursor: no-drop; /* Cursor não clicável */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+/* ________________________________________________________ */
+/* Responsividade para diferentes telas */
+@media screen and (min-width: 768px) {
+    /* Estilos aplicados a telas maiores que 768px */
+    .menu {
+        display: flex; /* Alinha o menu em flexbox */
+        justify-content: space-between; /* Justifica o espaço entre os itens */
+        padding: 1rem; /* Padding */
+    } 
+
+    .menu a {
+        padding: 0 1rem; /* Padding horizontal nos links do menu */
+    }
+
+    html {
+        font-size: 18px; /* Aumenta o tamanho da fonte base */
+    }
+
+    header .limitador {
+        height: 15vh; /* Define a altura do cabeçalho */
+    }
+
+    .destaque {
+        height: 85vh; /* Ajusta a altura da seção destaque */
+    }
+}
+
+/* _______________________________________________________________________________________ */
+/* CONTATO */
+
+/* Conteúdo Secundário "Section" Área de Mapa "Google Maps" */
+iframe {
+    width: 100%; /* Largura total do iframe */
+    border: none; /* Remove borda */
+    margin-bottom: 130px; /* Margem inferior */
+}
+
+.contato {
+    margin-bottom: 150px; /* Margem inferior para a seção de contato */
+}

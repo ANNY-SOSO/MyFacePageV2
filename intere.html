@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    
+    <!-- Metatag para identificar o programador -->
+    <meta name="Sophia" content="DA2025">
+    
+    <!-- Metatag para responsividade -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies</title>
+    
+    <!-- Meta descrição da página -->
+    <meta name="description" content="Página de Apresentação Pessoal">
+
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="CSS/style.css">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/img.swan.jpg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="limitador">
+            <div class="logo">
+                <img src="img/img.swan.jpg" alt="Sophia Veiga">
+            </div>
+            <!-- Menu de navegação -->
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html" title="Bibliografia">Home</a></li>
+                    <li><a href="intere.html" title="Conheça meus interesses">Interesses</a></li>
+                    <li><a href="qualifica.html" title="Veja as minhas qualificações">Qualificações</a></li>
+                    <li><a href="contato.html" title="Entre em contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção de interesses e hobbies -->
+    <section class="interesses">
+        <h1>Página de Apresentação Pessoal</h1>
+
+        <!-- Título dos interesses e hobbies -->
+        <h3>Interesses e Hobbies</h3>
+        <ul>
+            <li>Programação</li>
+            <li>Dança e esportes</li>
+            <li>Música</li>
+            <li>Animais</li>
+            <li>Design de web</li>
+        </ul>
+
+        <!-- Seção do carrossel de imagens -->
+        <section class="carousel">
+            <div class="slides">
+                <img src="img/ballet.jpg" alt="Imagem 1" class="active">
+                <img src="img/cao.jpg" alt="Imagem 2">
+                <img src="img/imagem3.jpg" alt="Imagem 3">
+            </div>
+        </section>
+    </section>
+    
+    <script>
+        // Inicialização do carrossel de imagens
+        let currentIndex = 0; // Índice da imagem atual
+        const slides = document.querySelectorAll('.carousel .slides img'); // Seleciona todas as imagens do carrossel
+        const totalSlides = slides.length; // Total de imagens
+
+        // Intervalo para troca automática de imagens
+        setInterval(() => {
+            slides[currentIndex].classList.remove('active'); // Remove a classe 'active' da imagem atual
+            currentIndex = (currentIndex + 1) % totalSlides; // Avança para a próxima imagem
+            slides[currentIndex].classList.add('active'); // Adiciona a classe 'active' à nova imagem
+        }, 3000); // Tempo entre as trocas (3000 ms)
+    </script>
+
+    <footer>
+        <!-- Rodapé da página -->
+        <br>
+        <p>&copy;2024 Sophia. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
