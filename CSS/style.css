@@ -170,7 +170,7 @@ section p {
 figure {
     position: relative; /* Permite posicionar texto sobre a imagem */
     display: inline-block; /* Faz figuras ficarem lado a lado */
-    margin: 60px; /* Margem entre figuras */
+    margin: 10px;
 }
 
 /* Estilo das imagens */
@@ -290,6 +290,7 @@ section ul li {
     height: auto; /* Altura automática */
     display: none; /* Oculta imagens */
 }
+
 
 .slides img.active {
     display: block; /* Mostra imagem ativa */
